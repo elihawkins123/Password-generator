@@ -4,6 +4,7 @@ var upperCaseLetters="ABCDEFGHIJKLMOPQRSTUVWXYZ"
 var numbers="0123456789"
 var symbols="!@#$%^&*()"
 var possiblePassword=[]
+var password=[]
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -40,7 +41,13 @@ if(wantsymbols===true){
 }
 while(!wantlowerCaseLetters&&!wantupperCaseLetters&&!wantnumbers&&!wantsymbols){
   alert("Must select one option")
+  return null
 }
+for(var i=0;i<passwordLength;i++){
+  var newPassword=getrandomarray(possiblePassword)
+password.push(newPassword)
+}
+return password.join("")
 }
 
 // Write password to the #password input
